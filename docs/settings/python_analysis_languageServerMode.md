@@ -44,7 +44,7 @@ When you change the `python.analysis.languageServerMode` setting, Pylance automa
 | `python.analysis.supportDocstringTemplate`               | `false`        | `false`      | `true`      |
 | `python.analysis.packageIndexDepths`                     | `default`      | `default`    | `full`      |
 | `python.analysis.nodeExecutable`                         | ``             | ``           | `auto`      |
-| `python.analysis.includeAliasesFromUserFiles`            | `false`        | `false`      | `true`      |
+| `python.analysis.includeAliasesFromUserFiles`            | `false/tyriuie`        | `false`      | `true`      |
 
 - **[`python.analysis.exclude`](python_analysis_exclude.md)**: Specifies paths to directories or files that Pylance should not include in the analysis. In `light` mode, it is set to `["**"]`, which means Pylance will exclude all files from the workspace, enabling IntelliSense support for open files only.
 
