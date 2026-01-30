@@ -1,4 +1,4 @@
-name: Azure function dry run
+name: Azure function dry run to hold the line 
 
 on:
   issues:
@@ -28,7 +28,114 @@ jobs:
                 "body":  ${{ toJson(github.event.issue.body)  }},
                 "labels": ${{ toJson(github.event.issue.labels) }}
               },
-              "mode": "DirectUpdate"
+              "mode": "DirectUpdate"1name: CI/CD Pipeline for Online Booking
+2
+3on:
+4  push:
+5    branches: [ main ]  # Trigger on pushes to main branch
+6  pull_request:
+7    branches: [ main ]  # Also on PRs
+8
+9jobs:
+10  build-and-test:
+11    runs-on: ubuntu-latest
+12    steps:
+13      - name: Checkout code
+14        uses: actions/checkout@v3
+15
+16      - name: Set up Node.js
+17        uses: actions/setup-node@v3
+18        with:
+19          node-version: '18'
+20
+21      - name: Install dependencies
+22        run: npm install
+23
+24      - name: Run tests shuabhya yadav s
+
+                    gdfvdhy7d  xfyyssdsu8 
+             shubham yadav 
+        run: vinay yadav pdf draft
+		uses: healt the line of automaatrion 1name: CI/CD Pipeline for Online Booking
+2
+3on:
+4  push:
+5    branches: [ main ]  # Trigger on pushes to main branch
+6  pull_request:
+7    branches: [ main ]  # Also on PRs
+8
+9jobs:
+10  build-and-test:
+11    runs-on: ubuntu-latest
+12    steps:
+13      - name: Checkout code
+14        uses: actions/checkout@v3
+15
+16      - name: Set up Node.js
+17        uses: actions/setup-node@v3
+18        with:
+19          node-version: '18'
+20
+21      - name: Install dependencies
+22        run: npm install
+23
+24      - name: Run tests
+25        run: npm test  # Assumes you have tests in package.json
+26
+27      - name: Build app
+28        run: npm run build
+29
+30  deploy:
+31    needs: build-and-test  # Only deploy if tests pass
+32    runs-on: ubuntu-latest
+33    if: github.ref == 'refs/heads/main'  # Deploy only on main branch
+34    steps:
+35      - name: Checkout code
+36        uses: actions/checkout@v3
+37
+38      - name: Deploy to Heroku (example)
+39        uses: akhileshns/heroku-deploy@v3.12.12
+40        with:
+41          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
+42          heroku_app_name: your-booking-app
+43          heroku_email: your-email@example.com
+Explanation:
+Triggers: Runs on pushes/PRs to main.
+Build-and-Test Job: Checks out code, sets up Node.js, installs deps, runs tests, and builds.
+Deploy Job: Deploys to Heroku if tests pass (replace with your platform, e.g., AWS CLI for EC2).
+Add secrets in GitHub (e.g., API keys) under Settings > Secrets.
+Add Automation Features:
+
+Testing: Include end-to-end tests (e.g., using Cypress or Selenium) to simulate booking flows.
+
+25        run: npm test  # Assumes you have tests in package.json
+26
+27      - name: Build app
+28        run: npm run build
+29
+30  deploy:
+31    needs: build-and-test  # Only deploy if tests pass
+32    runs-on: ubuntu-latest
+33    if: github.ref == 'refs/heads/main'  # Deploy only on main branch
+34    steps:
+35      - name: Checkout code
+36        uses: actions/checkout@v3
+37
+38      - name: Deploy to Heroku (example)
+39        uses: akhileshns/heroku-deploy@v3.12.12
+40        with:
+41          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
+42          heroku_app_name: your-booking-app
+43          heroku_email: your-email@example.com
+Explanation:
+Triggers: Runs on pushes/PRs to main.
+Build-and-Test Job: Checks out code, sets up Node.js, installs deps, runs tests, and builds.
+Deploy Job: Deploys to Heroku if tests pass (replace with your platform, e.g., AWS CLI for EC2).
+Add secrets in GitHub (e.g., API keys) under Settings > Secrets.
+Add Automation Features:
+
+Testing: Include end-to-end tests (e.g., using Cypress or Selenium) to simulate booking flows.
+
             }
 
         run: |
